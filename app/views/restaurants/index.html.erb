@@ -1,10 +1,15 @@
 <div class= "container">
   <h1>Restaurants</h1>
+  <h2><%= link_to 'See Top Restaurants', top_restaurants_path %></h2>
   <% @restaurants.each do |r| %>
     <%= link_to restaurant_path(r) do %>
       <h3><%= r.name %></h3>
     <% end %>
     <h3><%= r.address %></h3>
     <h3><%= r.rating %></h3>
+    <h3><%= r.chef %></h3>
+    <%= link_to restaurant_path(r), method: :delete do %>
+      <h2><button type="button" class="btn btn-danger btn-sm button-font-default">Delete restaurant</button></h2>
+    <% end %>
   <% end %>
 </div>
