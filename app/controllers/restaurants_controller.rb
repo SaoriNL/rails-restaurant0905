@@ -1,7 +1,7 @@
 class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: %i[show chef destroy]
   def index
-   @restaurants = Restaurant.all
+    @restaurants = Restaurant.all
   end
 
   def show

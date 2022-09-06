@@ -1,15 +1,22 @@
-<div class= "container">
-  <h1>Restaurants</h1>
-  <h2><%= link_to 'See Top Restaurants', top_restaurants_path %></h2>
+<h1>Restaurants</h1>
+<h2><%= link_to 'See Top Restaurants', top_restaurants_path %></h2>
+<div class="card-wrapper">
   <% @restaurants.each do |r| %>
-    <%= link_to restaurant_path(r) do %>
-      <h3><%= r.name %></h3>
-    <% end %>
-    <h3><%= r.address %></h3>
-    <h3><%= r.rating %></h3>
-    <h3><%= r.chef %></h3>
-    <%= link_to restaurant_path(r), method: :delete do %>
-      <h2><button type="button" class="btn btn-danger btn-sm button-font-default">Delete restaurant</button></h2>
-    <% end %>
+    <div class="card-product">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <div class="card-product-infos">
+        <div class="nameratingbox">
+          <%= link_to restaurant_path(r) do %>
+            <h6><%= r.name %></h6>
+          <% end %>
+          <h6><%= r.rating %></h6>
+        </div>
+        <p><%= r.address %></p>
+        <h6><%= r.chef %></h6>
+        <%= link_to restaurant_path(r), method: :delete do %>
+          <button type="button" class="btn btn-danger btn-sm button-font-default">Delete restaurant</button>
+        <% end %>
+      </div>
+    </div>
   <% end %>
 </div>
