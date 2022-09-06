@@ -1,12 +1,27 @@
-<h1><%= @restaurant.name %></h1>
-<h1><%= @restaurant.address %></h1>
-<h1><%= @restaurant.rating %></h1>
+<div class="card-trip">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="card-trip-infos">
+    <div class="basic-info">
+      <div class="name">
+        <h3><%= @restaurant.name %></h3>
+      </div>
+      <div class="rating">
+        <h3>Rating: <%= @restaurant.rating %></h3>
+      </div>
+      <div class="address">
+        <h3><%= @restaurant.address %></h3>
+      </div>
+    </div>
+    <div class="review">
+      <% @restaurant.reviews.each do |r| %>
+        <h2><%= r.comment %></h2>
+        <%= link_to review_path(r), method: :delete do %>
+          <h2>Delete this review</h2>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-<% @restaurant.reviews.each do |r| %>
-  <h2><%= r.comment %></h2>
-  <%= link_to review_path(r), method: :delete do %>
-    <h2>Delete this review</h2>
-  <% end %>
-<% end %>
 <h3><%= link_to 'Add reviews', new_restaurant_review_path(@restaurant) %></h3>
 <h3><%= link_to 'See chef', chef_restaurant_path %></h3>
