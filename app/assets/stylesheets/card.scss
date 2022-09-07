@@ -77,7 +77,7 @@
 .card-trip .card-trip-infos {
   padding: 16px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: flex-start;
   position: relative;
   height: 600px;
@@ -92,20 +92,23 @@
 }
 
 .basic-info {
+  width: 500px;
   background-color: aqua;
   display: flex;
-  width: 500px;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  // align-items: flex-start;
   flex-direction: column;
 }
 
 .name {
   background-color: burlywood;
+  margin: 8px;
 }
 
 .rating {
   background-color: chartreuse;
+  margin: 8px;
 }
 
 .review {
@@ -114,4 +117,5 @@
 
 .address {
   background-color: blueviolet;
+  margin: 8px;
 }
